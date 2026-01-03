@@ -3,6 +3,9 @@
 *~
 .DS_Store
 
+# Huge wallpapers library
+assets/wallpapers/
+
 # Sensitive system files (Never upload these!)
 .history
 .zsh_history
