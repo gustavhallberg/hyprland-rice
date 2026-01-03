@@ -1,0 +1,169 @@
+// {
+//   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  
+//   "logo": {
+//       "type": "small"
+//   },
+
+//   "modules": [
+
+    
+//     "title",
+//     "separator",
+//     "os",
+//     "host",
+//     "kernel",
+//     "uptime",
+//     "packages",
+//     "shell",
+//     "display",
+//     "de",
+//     "wm",
+//     "wmtheme",
+//     "theme",
+//     "icons",
+//     "font",
+//     //"cursor",
+//     "terminal",
+//     "terminalfont",
+//     "cpu",
+//     "gpu",
+//     "memory",
+//     //"swap",
+//     "disk",
+//     "localip",
+//     "battery",
+//     //"poweradapter",
+//     //"locale",
+//     "break",
+//     "colors"
+//   ]
+// }
+
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+      "type": "small",
+      "padding": {
+            "top": 2,
+            "left": 2
+        }
+    },
+    "display": {
+        "separator": " : "
+    },
+    "modules": [
+        
+        {
+            "type": "title"
+            
+        },
+
+        "separator",
+
+        {
+            "type": "os",
+            "key": "O",
+            "keyColor": "yellow",
+            "format": "{3}"
+        },
+        // {
+        //     "type": "os",
+        //     "key": "├{icon}", // Just get your distro's logo off nerdfonts.com
+        //     "keyColor": "yellow"
+        // },
+        {
+            "type": "kernel",
+            "key": "K",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "packages",
+            "key": "P",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "shell",
+            "key": "S",
+            "keyColor": "yellow"
+        },
+        "break",
+
+        {
+            "type": "wm",
+            "key": "W",
+            "keyColor": "blue"
+        },
+        // {
+        //     "type": "lm",
+        //     "key": "├󰧨",
+        //     "keyColor": "blue"
+        // },
+        {
+            "type": "wmtheme",
+            "key": "├󰉼",
+            "keyColor": "blue"
+        },
+        {
+            "type": "icons",
+            "key": "├󰀻",
+            "keyColor": "blue"
+        },
+        {
+            "type": "terminal",
+            "key": "T",
+            "keyColor": "blue"
+        },
+        {
+            "type": "wallpaper",
+            "key": "└󰸉",
+            "keyColor": "blue"
+        },
+
+        "break",
+        {
+            "type": "host",
+            "key": "B",
+            "keyColor": "green"
+        },
+        {
+            "type": "cpu",
+            "key": "C",
+            "keyColor": "green"
+        },
+        {
+            "type": "gpu",
+            "key": "G",
+            "keyColor": "green"
+        },
+        {
+            "type": "disk",
+            "key": "D",
+            "keyColor": "green"
+        },
+        {
+            "type": "memory",
+            "key": "R",
+            "keyColor": "green"
+        },
+        // {
+        //     "type": "swap",
+        //     "key": "├󰓡",
+        //     "keyColor": "green"
+        // },
+        {
+            "type": "display",
+            "key": "M",
+            "keyColor": "green"
+        },
+        {
+            "type": "uptime",
+            "key": "U",
+            "keyColor": "green"
+        },
+
+        "break",
+        "colors"
+    ]
+}
+
