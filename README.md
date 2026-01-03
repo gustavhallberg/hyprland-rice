@@ -1,2 +1,4 @@
-# cachy-rice
+# Hyprland config, finally
+
+## Currently:
 CachyOS rice for the Lenovos.
