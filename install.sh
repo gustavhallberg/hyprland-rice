@@ -33,7 +33,7 @@ APPS=(
     gtk3 gtk4 libadwaita
     
     # Portability Tools & Apps
-    stow xsettingsd layan-gtk-theme-git
+    stow xsettingsd 
     zen-browser-bin vscodium-bin
 )
 
@@ -52,7 +52,36 @@ yay -S --needed --noconfirm "${APPS[@]}" "${FONTS[@]}"
 # Standard directories for future theme/icon manual installs
 mkdir -p ~/.config ~/.cache ~/.themes ~/.icons
 
-# 7. Deploy Dotfiles
+# 7. Failsafe: Backup Existing Configs to Prevent Stow Conflicts
+# This identifies real files/folders that would block symlinks and moves them.
+BACKUP_DIR="$HOME/dots_backup_$(date +%Y%m%d_%H%M%S)"
+
+# Items to check based on your dotfiles structure
+CONFIG_ITEMS=(
+    ".config/hypr"
+    ".config/fish"
+    ".config/waybar"
+    ".config/wofi"
+    ".config/foot"
+    ".config/fastfetch"
+    ".config/qt6ct"
+    ".config/kvantum"
+    ".config/nwg-look"
+    ".zshrc"
+    ".gitconfig"
+    ".gtkrc-2.0"
+)
+
+echo "Checking for existing config files to prevent Stow conflicts..."
+for ITEM in "${CONFIG_ITEMS[@]}"; do
+    if [ -e "$HOME/$ITEM" ] && [ ! -L "$HOME/$ITEM" ]; then
+        mkdir -p "$BACKUP_DIR"
+        echo "Conflict found: Moving existing $ITEM to $BACKUP_DIR"
+        mv "$HOME/$ITEM" "$BACKUP_DIR/"
+    fi
+done
+
+# 8. Deploy Dotfiles
 # Links your managed configs from the dotfiles directory
 echo "Deploying dotfiles via stow..."
 if [ -f "scripts/stow.sh" ]; then
@@ -63,7 +92,7 @@ else
     stow -d dotfiles -t ~ .
 fi
 
-# 8. Initial Wallpaper Setup
+# 9. Initial Wallpaper Setup
 if [ -f "assets/wallpapers/default.png" ]; then
     echo "Initializing wallpaper..."
     swww-daemon & sleep 2 && ./scripts/set_wallpaper.sh assets/wallpapers/default.png
@@ -71,6 +100,9 @@ fi
 
 echo "-------------------------------------------------------"
 echo "Installation complete."
+if [ -d "$BACKUP_DIR" ]; then
+    echo "Safety Note: Existing files were moved to $BACKUP_DIR"
+fi
 echo "Apps, fonts, and dotfiles are ready."
 echo "Manual theme configuration required for GTK/QT."
 echo "-------------------------------------------------------"
