@@ -1,9 +1,9 @@
 # mode & placement
 show=drun
-location=top
+location=center
 width=700
 lines=8
-columns=2
+columns=1
 dynamic_lines=false
 
 # icons
