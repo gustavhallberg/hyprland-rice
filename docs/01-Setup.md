@@ -36,3 +36,4 @@ Run the stow script
 * wofi
 * xsettingsd
 * dolphin
+* swww
