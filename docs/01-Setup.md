@@ -16,4 +16,23 @@ Run the install apps script, follow it with creating a /projects/ folder in /hom
 
 Run the stow script 
 
-### Tweaks
+### Apps 
+(prior to a script's existence / help for creating the script)
+
+fastfetch
+fish
+foot
+gtk-3.0
+gtk-4.0
+hypr - ofc already there
+    hyprland.conf
+    input.conf
+    keybinds.conf
+    hyprlock.conf
+nwg-look - dunno what it is yet
+qt6ct
+(qt5ct) - haven't been able to create the config yet. 
+waybar
+wofi
+xsettingsd
+dolphin
