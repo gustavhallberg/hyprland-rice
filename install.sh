@@ -34,7 +34,7 @@ APPS=(
     
     # Portability Tools & Apps
     stow xsettingsd 
-    zen-browser-bin vscodium-bin
+    
 )
 
 # 5. Define Fonts
