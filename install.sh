@@ -24,11 +24,17 @@ yay -Syu --noconfirm
 
 # 4. Define Applications
 APPS=(
+    # Core Rice Infrastructure
     hyprland hyprlock hypridle swww 
     waybar wofi foot dolphin 
     fastfetch nwg-look qt6ct qt5ct kvantum
-    qt6-gtk-platformtheme stow xsettingsd 
-    layan-gtk-theme-git zen-browser-bin vscodium-bin
+    
+    # GTK Support & Engines
+    gtk3 gtk4 libadwaita
+    
+    # Portability Tools & Apps
+    stow xsettingsd layan-gtk-theme-git
+    zen-browser-bin vscodium-bin
 )
 
 # 5. Define Fonts
