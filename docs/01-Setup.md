@@ -37,3 +37,9 @@ Run the stow script
 * xsettingsd
 * dolphin
 * swww
+
+## Stuff I need to add manually
+# Ask gemini to update the script with 
+
+- papirus-icon-theme
+
