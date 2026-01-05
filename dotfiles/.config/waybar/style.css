@@ -1,204 +1,73 @@
-@define-color bg    #1a1b26;
-@define-color fg    #a9b1d6;
-@define-color blk   #32344a;
-@define-color red   #f7768e;
-@define-color grn   #9ece6a;
-@define-color ylw   #e0af68;
-@define-color blu   #7aa2f7;
-@define-color mag   #ad8ee6;
-@define-color cyn   #0db9d7;
-@define-color brblk #444b6a;
-@define-color wht   #ffffff;
-@define-color brcyn #7dcfff;
-@define-color brmag #bb9af7;
+@import "colors.css";
 
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-family: "JetBrainsMono Nerd Font", monospace;
     font-size: 14px;
-    font-weight: bold ;
+    font-weight: bold;
 }
 
 window#waybar {
-  background: @bg;
-  color: @fg;
-}
-
-window#waybar.hidden {
-    opacity: 0.2;
-}
-
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
-
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
-}
-
-
-
-button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 0;
-}
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
+    background: @surface_container;
+    color: @on_surface;
+    /* Add a subtle bottom border using the primary color */
+    border-bottom: 2px solid @primary;
 }
 
 #workspaces button {
     padding: 0 6px;
-    color: @cyn;
+    color: @on_surface_variant;
     background: transparent;
-    border-bottom: 2px solid @bg;
+    border-bottom: 2px solid transparent;
 }
+
 #workspaces button.active {
-    color: @cyn;
-    border-bottom: 2px solid @mag;
-}
-#workspaces button.empty {
-    color: @wht;
-}
-#workspaces button.empty.active {
-    color: @cyn;
-    border-bottom: 2px solid @mag;
-}
-
-/* you can set a style on hover for any module like this */
-/* #pulseaudio:hover {
-    background-color: #a37800;
-}
-
-#workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: #ffffff;
-}
-
-#workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+    color: @primary;
+    border-bottom: 2px solid @primary;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    color: @error;
+    border-bottom: 2px solid @error;
 }
 
-#mode {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
-} */
-
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#tray {
+/* Module Grouping - Unified Nordic Look */
+#clock, #battery, #cpu, #memory, #network, #temperature {
     padding: 0 10px;
-    color: #ffffff;
+    margin: 4px 0;
 }
 
-#custom-sep {
-    color: @brblk;
-}
-
-
-#workspaces {
-    /* margin: 6px; */
-}
-
-#window {
-    margin: 6px;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
-}
-
+/* Assigning specific Matugen tones to modules */
 #clock {
-    color: @cyn;
-    border-bottom: 2px solid @cyn;
+    color: @primary;
 }
 
 #battery {
-    color: @ylw;
-    border-bottom: 2px solid @ylw;
+    color: @tertiary;
 }
 
 #memory {
-    color: @mag;
-    border-bottom: 2px solid @mag;
+    color: @secondary;
 }
 
 #cpu {
-    color: @grn;
-    border-bottom: 2px solid @grn;
+    color: @primary_fixed_dim;
 }
 
 #network {
-    color: @blu;
-    border-bottom: 2px solid @blu;
+    color: @tertiary_fixed_dim;
 }
 
 #temperature {
-    color: @red;
-    border-bottom: 2px solid @red;
+    color: @on_surface_variant;
 }
 
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
-/* Using steps() instead of linear as a timing function to limit cpu usage */
+/* Critical State */
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
+    background-color: @error_container;
+    color: @on_error_container;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
-
-
-label:focus {
-    background-color: #000000;
-}
-
