@@ -43,3 +43,7 @@ Run the stow script
 
 - papirus-icon-theme
 
+## Wallpapers
+https://github.com/linuxdotexe/nordic-wallpapers.git
+Clone above into ~/projects/community - then move wallpapers do wallpapers folder of choice. Preferably not the whole directory to git because of size. 
+
