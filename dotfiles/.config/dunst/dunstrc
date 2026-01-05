@@ -1,66 +1,16 @@
 [global]
-    monitor = 0
-    follow = mouse
-    indicate_hidden = yes
-
-    # Positioning
-    width = 300
-    height = 200
-    origin = top-right
-    offset = 20, 20
-    notification_height = 0
-    
-    # Appearance
-    separator_height = 2
-    padding = 12
-    horizontal_padding = 12
-    text_icon_padding = 10
-    frame_width = 2
-    frame_color = "#a6adc8"
-    separator_color = frame
-    corner_radius = 5
-
-    # Text & Font (Updated to your JetBrains font)
-    font = JetBrainsMono Nerd Font 10
-    line_height = 0
-    markup = full
-    alignment = left
-    vertical_alignment = center
-    
-    # Behavior
-    sort = yes
-    idle_threshold = 120
-    show_age_threshold = 60
-    word_wrap = yes
-    stack_duplicates = true
-    hide_duplicate_count = false
-    show_indicators = yes
-    timeout = 5
-
-    # Icons (Updated for standard CachyOS/Arch paths)
-    min_icon_size = 0
-    max_icon_size = 48
-    icon_path = /usr/share/icons/Papirus-Dark/48x48/status/:/usr/share/icons/Papirus-Dark/48x48/devices/:/usr/share/icons/Papirus-Dark/48x48/apps/
-
-    # Interaction (Updated for Zen Browser and Wofi)
-    dmenu = /usr/bin/wofi -dmenu -p dunst:
-    browser = /usr/bin/zen-browser --new-tab
-
-    title = Dunst
-    class = Dunst
+frame_color = "#b1c5ff"
+separator_color = "#b1c5ff"
 
 [urgency_low]
-    background = "#1e1e2e"
-    foreground = "#CDD6F4"
+background = "#1a1b21"
+foreground = "#e2e2e9"
 
 [urgency_normal]
-    background = "#1e1e2e"
-    foreground = "#CDD6F4"
-    # Added a blue border for normal priority to match Catppuccin flavor
-    frame_color = "#89b4fa"
+background = "#1e1f25"
+foreground = "#e2e2e9"
 
 [urgency_critical]
-    background = "#1e1e2e"
-    foreground = "#CDD6F4"
-    frame_color = "#f38ba8"
-    timeout = 20
+background = "#93000a"
+foreground = "#ffdad6"
+frame_color = "#ffb4ab"
