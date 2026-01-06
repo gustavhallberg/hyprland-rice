@@ -1,53 +1,45 @@
 @import "colors.css";
 
-* {
+window {
     font-family: "JetBrainsMono Nerd Font";
     font-size: 14px;
-}
-
-#window {
-    background-color: @bg !important;
+    background-color: @bg;
     color: @fg;
-    border: 1px solid @primary;
+    border: 2px solid @primary;
     border-radius: 12px;
-    /* Clips the square corners of internal scrolling lists */
-    overflow: hidden; 
 }
 
 #outer-box {
     margin: 10px;
-    background-color: transparent !important;
+    padding: 10px;
+    background-color: @bg;
+    border-radius: 12px;
 }
 
 #inner-box {
-    margin: 5px;
-    background-color: transparent !important;
-}
-
-#scroll {
-    background-color: transparent !important;
+    background-color: @bg; /* Set again here */
 }
 
 #input {
-    padding: 8px;
-    margin: 5px 10px 15px 10px;
-    border: none;
-    background-color: @primary_container !important;
-    color: @on_primary_container;
-    border-radius: 6px;
+    padding: 10px;
+    margin: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid @primary_container;
+    background-color: @surface_container;
+    color: @fg;
 }
 
 #entry {
-    padding: 8px;
-    margin: 2px 10px;
-    border-radius: 6px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
 }
 
 #entry:selected {
-    background-color: @primary !important;
+    background-color: @primary_container;
+    color: @on_primary_container;
 }
 
 #text:selected {
-    color: @bg !important;
     font-weight: bold;
 }
