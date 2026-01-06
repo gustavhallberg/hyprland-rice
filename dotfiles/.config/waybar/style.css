@@ -2,27 +2,31 @@
 
 * {
     font-family: "JetBrainsMono Nerd Font", monospace;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
 }
 
 window#waybar {
-    background: @surface_container;
-    color: @on_surface;
-    /* Add a subtle bottom border using the primary color */
-    border-bottom: 2px solid @primary;
+    background-color: @background;
+    color: @on_background;
+    border-bottom: 1px solid @primary_container;
 }
 
+#window {
+    margin: 6px;
+}
+
+/* --- WORKSPACES --- */
 #workspaces button {
-    padding: 0 6px;
+    padding: 0 8px;
     color: @on_surface_variant;
     background: transparent;
     border-bottom: 2px solid transparent;
 }
 
 #workspaces button.active {
-    color: @primary;
-    border-bottom: 2px solid @primary;
+    color: @primary_fixed;
+    border-bottom: 2px solid @primary_fixed;
 }
 
 #workspaces button.urgent {
@@ -30,44 +34,44 @@ window#waybar {
     border-bottom: 2px solid @error;
 }
 
-/* Module Grouping - Unified Nordic Look */
+/* --- MODULE SIGNIFIERS --- */
 #clock, #battery, #cpu, #memory, #network, #temperature {
     padding: 0 10px;
-    margin: 4px 0;
-}
-
-/* Assigning specific Matugen tones to modules */
-#clock {
-    color: @primary;
-}
-
-#battery {
-    color: @tertiary;
-}
-
-#memory {
-    color: @secondary;
-}
-
-#cpu {
-    color: @primary_fixed_dim;
 }
 
 #network {
-    color: @tertiary_fixed_dim;
+    color: @tertiary_fixed; /* Brightest Lavender */
+    border-bottom: 2px solid @tertiary_fixed;
+}
+
+#cpu {
+    color: @primary_fixed; /* Brightest Neon Cyan */
+    border-bottom: 2px solid @primary_fixed;
 }
 
 #temperature {
-    color: @on_surface_variant;
+    color: @error; /* Coral Red */
+    border-bottom: 2px solid @error;
+    padding: 0 12px;
 }
 
-/* Critical State */
+#clock {
+    color: @source_color; /* Raw Accent Blue */
+    border-bottom: 2px solid @source_color;
+}
+
+#memory {
+    color: @secondary_fixed; /* Pale Mint/Teal */
+    border-bottom: 2px solid @secondary_fixed;
+}
+
+#battery {
+    color: @inverse_primary; /* High-density Deep Cyan */
+    border-bottom: 2px solid @inverse_primary;
+}
+
 #battery.critical:not(.charging) {
     background-color: @error_container;
     color: @on_error_container;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    border-bottom: 2px solid @error;
 }

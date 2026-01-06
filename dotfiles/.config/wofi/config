@@ -1,3 +1,6 @@
+# stylesheet
+style=/home/gustav/.config/wofi/style.css
+
 # mode & placement
 show=drun
 location=center
@@ -28,5 +31,3 @@ key_submit=Return
 key_forward=Tab
 key_backward=Shift-ISO_Left_Tab
 
-# stylesheet
-style=/home/gustav/.config/wofi/style.css

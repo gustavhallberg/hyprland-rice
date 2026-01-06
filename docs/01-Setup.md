@@ -43,6 +43,8 @@ Run the stow script
 
 - papirus-icon-theme
 
+sudo pacman -S wireplumber brightnessctl playerctl
+
 ## Wallpapers
 https://github.com/linuxdotexe/nordic-wallpapers.git
 Clone above into ~/projects/community - then move wallpapers do wallpapers folder of choice. Preferably not the whole directory to git because of size. 
