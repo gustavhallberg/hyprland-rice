@@ -42,8 +42,9 @@ Run the stow script
 # Ask gemini to update the script with 
 
 - papirus-icon-theme
-
-sudo pacman -S wireplumber brightnessctl playerctl
+- wireplumber (probably already there)
+- brightnessctl 
+- playerctl (probably already there)
 
 ## Wallpapers
 https://github.com/linuxdotexe/nordic-wallpapers.git

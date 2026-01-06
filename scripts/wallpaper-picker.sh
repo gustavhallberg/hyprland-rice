@@ -4,7 +4,9 @@
 DIR="$HOME/Pictures/Wallpapers"
 CACHE="$HOME/.cache/wofi-wallpaper-picker"
 SYM_LINK="$HOME/.config/current_wallpaper"
-WOFI_CONF="$HOME/.config/wofi/wallpaper.conf"
+WOFI_DIR="$HOME/.config/wofi-picker"
+WOFI_CONF="$WOFI_DIR/config"
+SHUFFLE_ICON="$CACHE/shuffle_icon.png"
 
 # 2. PREPARE CACHE
 if [ ! -d "$CACHE" ]; then
@@ -13,40 +15,49 @@ fi
 
 # 3. GENERATE LIST
 list_wallpapers() {
+    if [ -f "$SHUFFLE_ICON" ]; then
+        echo "img:$SHUFFLE_ICON:text:SHUFFLE_RANDOM"
+    fi
+
     for i in "$DIR"/*.{jpg,jpeg,png,webp}; do
         if [ -f "$i" ]; then
             filename=$(basename "$i")
-            # Create thumbnail if not present
+            # 16:9 Crop logic (640x360)
             if [ ! -f "$CACHE/$filename" ]; then
-                magick "$i" -strip -thumbnail 500x500^ -gravity center -extent 500x500 "$CACHE/$filename"
+                magick "$i" -strip -thumbnail 640x360^ -gravity center -extent 640x360 "$CACHE/$filename"
             fi
-            # Format: img:path:text:display_name
             echo "img:$CACHE/$filename:text:$filename"
         fi
     done
 }
 
 # 4. EXECUTE WOFI
-SELECTED=$(list_wallpapers | wofi --conf "$WOFI_CONF")
+# Move into the config directory so relative paths in 'config' resolve
+SELECTED=$(
+    cd "$WOFI_DIR" || exit
+    list_wallpapers | wofi --conf "config" --cache-file /dev/null
+)
 
 # 5. HANDLING SELECTION
 if [ -z "$SELECTED" ]; then
     exit 0
 fi
 
-# Extract the filename (the 4th field)
 FILENAME=$(echo "$SELECTED" | awk -F: '{print $4}')
-FULL_PATH="$DIR/$FILENAME"
 
-# 6. APPLY THEME DIRECTLY
-# Update symlink for persistence
-ln -sf "$FULL_PATH" "$SYM_LINK"
+if [ "$FILENAME" == "SHUFFLE_RANDOM" ]; then
+    FULL_PATH=$(find "$DIR" -maxdepth 1 -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.webp" \) | shuf -n 1)
+    FILENAME=$(basename "$FULL_PATH")
+else
+    FULL_PATH="$DIR/$FILENAME"
+fi
 
-# Trigger Matugen on the specific file
-# This is what fires your post_hooks (swaync, waybar, hyprland)
-matugen image "$FULL_PATH"
-
-# 7. VISUAL TRANSITION (Directly via swww)
-swww img "$FULL_PATH" --transition-type center --transition-step 90 --transition-fps 60
-
-notify-send "Wallpaper Updated" "Applied $FILENAME"
+# 6. APPLY THEME
+if [ -f "$FULL_PATH" ]; then
+    ln -sf "$FULL_PATH" "$SYM_LINK"
+    matugen image "$FULL_PATH"
+    swww img "$FULL_PATH" --transition-type center --transition-step 90 --transition-fps 60
+    notify-send "Wallpaper Updated" "Applied $FILENAME"
+else
+    notify-send "Error" "Selection failed: $FULL_PATH"
+fi
