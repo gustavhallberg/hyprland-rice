@@ -1,4 +1,6 @@
 @import "colors.css";
+@import "notifications.css";
+@import "control_center.css";
 
 .notification-row {
     outline: none;

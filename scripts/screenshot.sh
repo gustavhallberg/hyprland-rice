@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
 
 # 1. DYNAMIC PATHS
-SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
-REPO_ROOT=$(dirname "$SCRIPT_DIR")
 SAVE_DIR="$HOME/Pictures/Screenshots"
-
 mkdir -p "$SAVE_DIR"
 
 # 2. FILENAME
@@ -12,30 +9,38 @@ TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 FILE_PATH="$SAVE_DIR/screenshot_$TIMESTAMP.png"
 
 # 3. CAPTURE LOGIC
-# $1 = area/full | $2 = edit (optional)
-
 case $1 in
     "area")
+        # Direct capture of slurp output
         GEOMETRY=$(slurp)
-        [ -z "$GEOMETRY" ] && exit 0 # Exit if user cancels selection
-        TARGET_GEOM="-g $GEOMETRY"
+        if [ -z "$GEOMETRY" ]; then
+            exit 0
+        fi
         ;;
     *)
-        TARGET_GEOM=""
+        GEOMETRY=""
         ;;
 esac
 
-# 4. EXECUTION (Direct or Edit)
+# 4. EXECUTION
 if [ "$2" == "edit" ]; then
-    # Capture -> Swappy -> Save via Swappy's -o flag
-    grim $TARGET_GEOM -t png - | swappy -f - -o "$FILE_PATH"
+    if [ -n "$GEOMETRY" ]; then
+        grim -g "$GEOMETRY" -t png - | swappy -f - -o "$FILE_PATH"
+    else
+        grim -t png - | swappy -f - -o "$FILE_PATH"
+    fi
 else
-    # Capture -> Direct Save
-    grim $TARGET_GEOM "$FILE_PATH"
+    if [ -n "$GEOMETRY" ]; then
+        grim -g "$GEOMETRY" "$FILE_PATH"
+    else
+        grim "$FILE_PATH"
+    fi
 fi
 
 # 5. CLIPBOARD & NOTIFY
 if [ -f "$FILE_PATH" ]; then
     wl-copy < "$FILE_PATH"
     notify-send "Screenshot Captured" "Saved: $(basename "$FILE_PATH")" -i camera-photo
+else
+    notify-send "Screenshot Failed" "Could not save file" -u critical
 fi
