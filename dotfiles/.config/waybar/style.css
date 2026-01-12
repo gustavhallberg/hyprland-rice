@@ -1,9 +1,10 @@
 @import "colors.css";
 
 * {
-    font-family: "JetBrainsMono Nerd Font", monospace;
-    font-size: 14px;
-    font-weight: bold;
+    font-family: "SF Pro Display", "SF Pro Text", "JetBrainsMono Nerd Font Propo";
+    font-size: 15.5px;
+    font-weight: 600;
+
 }
 
 window#waybar {
