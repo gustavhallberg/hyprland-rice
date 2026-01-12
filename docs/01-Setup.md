@@ -50,3 +50,14 @@ Run the stow script
 https://github.com/linuxdotexe/nordic-wallpapers.git
 Clone above into ~/projects/community - then move wallpapers do wallpapers folder of choice. Preferably not the whole directory to git because of size. 
 
+
+## Todo
+- hyprsunset
+- wlogout
+- try new waybar look
+- transparency
+- customize foot window behavior (centered if only window on desktop)
+- customize zen browser
+- install discord & spotify spicetify theme them
+- customize vscodium
+- deal with qt5/6 & gtk - styling and performance optimisations
