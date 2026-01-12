@@ -60,15 +60,8 @@ fi
 # 8. APPLY THEME
 if [ -f "$FULL_PATH" ]; then
     ln -sf "$FULL_PATH" "$SYM_LINK"
-    
-    # Start transition first
-    swww img "$FULL_PATH" --transition-type center --transition-step 90 --transition-fps 60
-    
-    # Sync delay for visual polish
-    sleep 0.4
-    
-    # Apply colors after transition is visible
     matugen image "$FULL_PATH"
+    swww img "$FULL_PATH" --transition-type center --transition-step 90 --transition-fps 60
     notify-send "Wallpaper Updated" "Applied $FILENAME"
 else
     notify-send "Error" "Selection failed: $FULL_PATH"

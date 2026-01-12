@@ -1,10 +1,6 @@
-@import "colors.css";
+@import "../colors.css";
 
 window {
-    font-family: "SF Pro Display", "SF Pro Text", "JetBrainsMono Nerd Font Propo";
-    font-size: 15.5px;
-    font-weight: 600;
-    
     background-color: @bg;
     color: @fg;
     border: 2px solid @primary;
@@ -14,17 +10,11 @@ window {
 #outer-box {
     margin: 10px;
     padding: 10px;
-   
-    border-radius: 12px;
-}
-
-#inner-box {
-    background-color: @bg;
 }
 
 #input {
+    margin: 10px 40px;
     padding: 10px;
-    margin: 10px 20px;
     border-radius: 8px;
     border: 1px solid @primary_container;
     background-color: @surface_container;
@@ -32,16 +22,25 @@ window {
 }
 
 #entry {
+    /* 280 (image) + 20 (padding) = 300px per entry */
     padding: 10px;
     margin: 5px;
     border-radius: 8px;
+    /* Force column consistency */
+    min-width: 280px;
 }
 
 #entry:selected {
     background-color: @primary_container;
-    color: @on_primary_container;
 }
 
-#text:selected {
-    font-weight: bold;
+#img {
+    /* Set specific margins to 0 to clear previous 'not a number' warnings */
+    margin: 0px;
+    border-radius: 8px;
+}
+
+#text {
+    font-size: 0px;
+    color: transparent;
 }
