@@ -65,7 +65,7 @@ if [ -f "$FULL_PATH" ]; then
     swww img "$FULL_PATH" --transition-type center --transition-step 90 --transition-fps 60
     
     # Sync delay for visual polish
-    sleep 0.4
+    sleep 2
     
     # Apply colors after transition is visible
     matugen image "$FULL_PATH"
