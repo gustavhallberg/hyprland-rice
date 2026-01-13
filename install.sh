@@ -26,11 +26,14 @@ yay -Syu --noconfirm
 APPS=(
     # Core Rice Infrastructure
     hyprland hyprlock hypridle swww 
-    waybar wofi foot dolphin 
+    waybar wofi foot dolphin fish
     fastfetch nwg-look qt6ct qt5ct kvantum
     
     # GTK Support & Engines
     gtk3 gtk4 libadwaita
+    
+    # Audio, Media & Theming
+    wireplumber brightnessctl playerctl papirus-icon-theme
     
     # Portability Tools & Apps
     stow xsettingsd 
@@ -50,7 +53,7 @@ yay -S --needed --noconfirm "${APPS[@]}" "${FONTS[@]}"
 
 # 6. Directory Setup
 # Standard directories for future theme/icon manual installs
-mkdir -p ~/.config ~/.cache ~/.themes ~/.icons
+mkdir -p ~/.config ~/.cache ~/.themes ~/.icons ~/projects
 
 # 7. Failsafe: Backup Existing Configs to Prevent Stow Conflicts
 # This identifies real files/folders that would block symlinks and moves them.

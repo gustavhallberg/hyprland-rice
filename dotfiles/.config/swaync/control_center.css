@@ -1,62 +1,80 @@
 @import "colors.css";
 
-/* Variable Mapping */
-@define-color text            @fg;
-@define-color background-alt  alpha(@primary, 0.15);
-@define-color selected        @primary;
-@define-color hover           alpha(@primary, 0.3);
 
-* {
-    color: @text;
-    all: unset;
-    font-family: "SF Pro Display", "JetBrainsMono Nerd Font", sans-serif;
-    transition: 200ms;
-}
-
+/* Container */
 .control-center {
-    background: alpha(@bg, 0.85);
-    border-radius: 10px;
+    background-color: @bg;
     border: 1px solid @primary;
-    margin: 10px;
-    padding: 15px;
+    border-radius: 12px;
 }
 
-.widget-label > label {
-    font-size: 1.2rem;
-    font-weight: 800;
-    margin: 10px 5px;
-    color: @primary;
+/* Scrollbar Suppression */
+scrollbar {
+    background-color: transparent;
+    border: none;
+}
+scrollbar trough, scrollbar slider {
+    background-color: transparent;
 }
 
-/* Button Grid - Centering Fix */
+/* Button Grid */
 .widget-buttons-grid {
-    background: @background-alt;
+    background-color: alpha(@primary, 0.1);
+    margin: 10px;
     padding: 10px;
-    margin: 5px 0px;
+    border-radius: 12px;
+}
+
+.widget-buttons-grid button {
+    background-color: alpha(@bg, 0.5);
+    border-radius: 8px;
+    min-width: 50px;
+    min-height: 50px;
+}
+
+/* Sliders - Logic to prevent GtkGizmo -13 error */
+.widget-volume, .widget-backlight {
+    margin: 10px;
+    padding: 10px;
+    background-color: alpha(@primary, 0.1);
+    border-radius: 12px;
+}
+
+.widget-volume label, .widget-backlight label {
+    font-size: 1.2rem;
+    color: @primary;
+    margin-right: 15px;
+}
+
+scale trough {
+    background-color: alpha(@fg, 0.1);
+    border-radius: 10px;
+    min-height: 10px;
+    min-width: 200px; /* Secure positive math */
+}
+
+scale highlight {
+    background-color: @primary;
     border-radius: 10px;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button {
-    background: alpha(@bg, 0.5);
-    border-radius: 8px;
-    margin: 5px;
-    min-width: 55px;
-    min-height: 55px;
-    /* Proper Centering */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+scale slider {
+    background-color: @fg;
+    border-radius: 100%;
+    min-height: 16px;
+    min-width: 16px;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button label {
-    font-family: "JetBrainsMono Nerd Font";
-    font-size: 22px;
-    color: @primary;
-    margin: 0;
-    padding: 0;
+/* Notification Area Header */
+.widget-title {
+    margin: 10px;
 }
 
-.widget-buttons-grid > flowbox > flowboxchild > button:hover {
-    background: @hover;
-    box-shadow: inset 0 0 0 1px @primary;
+.widget-title label {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.widget-dnd {
+    margin: 10px;
 }

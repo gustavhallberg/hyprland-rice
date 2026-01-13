@@ -2,22 +2,6 @@
 @import "notifications.css";
 @import "control_center.css";
 
-.notification-row {
-    outline: none;
-    margin: 10px;
-    padding: 0;
-}
-
-.notification-content {
-    background: @bg;
-    color: @fg;
-    padding: 10px;
-    border-radius: 10px;
-    border: 2px solid @primary;
-}
-
-.control-center {
-    background: @surface;
-    border: 2px solid @primary;
-    border-radius: 10px;
+* {
+    font-family: "SF Pro Display", sans-serif;
 }
