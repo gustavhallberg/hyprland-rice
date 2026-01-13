@@ -28,16 +28,27 @@ window {
     border-radius: 8px;
     /* Force column consistency */
     min-width: 280px;
+    background-color:transparent;
 }
 
 #entry:selected {
     background-color: @primary_container;
 }
 
+#entry:selected #img {
+    background-color: transparent;
+    color: transparent;
+    /* Some themes apply a border here too; let's kill that just in case */
+    border: none;
+    outline: none;
+}
+
 #img {
     /* Set specific margins to 0 to clear previous 'not a number' warnings */
     margin: 0px;
     border-radius: 8px;
+    background-color: transparent;
+    
 }
 
 #text {

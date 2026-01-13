@@ -14,8 +14,8 @@ window {
 #outer-box {
     margin: 10px;
     padding: 10px;
-   
-    border-radius: 12px;
+    background-color: transparent;
+    
 }
 
 #inner-box {
@@ -33,15 +33,29 @@ window {
 
 #entry {
     padding: 10px;
-    margin: 5px;
+    margin: 10px;
     border-radius: 8px;
 }
 
 #entry:selected {
     background-color: @primary_container;
     color: @on_primary_container;
+    outline: none;
+}
+
+#entry:selected #img {
+    background-color: @primary_container;
+    /* Some themes apply a border here too; let's kill that just in case */
+    border: none;
+    padding: 0px;
+    margin: 1px;
 }
 
 #text:selected {
-    font-weight: bold;
+    font-weight: 600;
+    background-color: transparent;
+    color: @fg;
+
+
+
 }

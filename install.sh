@@ -26,7 +26,7 @@ yay -Syu --noconfirm
 APPS=(
     # Core Rice Infrastructure
     hyprland hyprlock hypridle swww 
-    waybar wofi foot dolphin fish
+    waybar wofi foot dolphin fish swaync
     fastfetch nwg-look qt6ct qt5ct kvantum
     
     # GTK Support & Engines
