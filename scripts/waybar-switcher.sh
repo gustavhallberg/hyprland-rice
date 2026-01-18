@@ -22,6 +22,7 @@ fi
 # Standardized to config.jsonc based on your terminal output
 ln -sf "$LIB_DIR/$choice/config.jsonc" "$DOT_DIR/config.jsonc"
 ln -sf "$LIB_DIR/$choice/style.css" "$DOT_DIR/style.css"
+ln -sf "$LIB_DIR/$choice/colors.css" "$DOT_DIR/colors.css"
 
 # 4. REFRESH
 pkill -x waybar

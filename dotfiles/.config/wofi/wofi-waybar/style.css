@@ -40,6 +40,7 @@ window {
 #entry:selected {
     background-color: @primary_container;
     color: @on_primary_container;
+    border: 1px solid @on_primary_container;
 }
 
 #text:selected {
