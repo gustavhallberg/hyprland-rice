@@ -1,8 +1,9 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 30,
+    "height": 20,
     "spacing": 0,
+    "margin-top": 5,
     "modules-left": [
         "custom/menu",
         "hyprland/workspaces"
@@ -28,6 +29,7 @@
             "focused": " "
         },
         "all-outputs": true,
+        "icon-size": 12,
         "persistent-workspaces": {
             "*": 4
          }
@@ -38,8 +40,12 @@
         "tooltip": false,
         "on-click": "swaync-client -t"
     },
-    "window": {
-        "format": "{ }"
+    "hyprland/window": {
+        "format": "{title}",
+        "format-tooltip": "{title}",
+        "max-length": 25,
+        "icon": true,
+        "icon-size": 18
         
     },
 
@@ -88,8 +94,8 @@
             "critical": 15
         },
         "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
+        "format-charging": "  {capacity}%",
+        "format-plugged": "  {capacity}%",
         "format-alt": "{icon} {time}",
         //"format-time": "{:T%Hh%Mm}",
         "format-icons": [
