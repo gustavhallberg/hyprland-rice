@@ -1,0 +1,43 @@
+@import "colors.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+}
+
+window {
+    background-color: @bg !important;
+    color: @fg;
+    border: 1px solid @primary;
+    border-radius: 12px;
+}
+
+#outer-box {
+    margin: 10px;
+}
+
+#inner-box {
+    margin: 0px;
+}
+
+#entry {
+    /* Critical: This forces the image and text to stack vertically */
+    /* allowing them to fit side-by-side in the grid columns */
+    orientation: vertical;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 8px;
+}
+
+#entry:selected {
+    background-color: @primary_container !important;
+}
+
+#img {
+    margin: 2px;
+    border-radius: 6px;
+}
+
+/* Maintain the hidden text to match your desired screenshot */
+#text {
+    display: none;
+}

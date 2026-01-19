@@ -1,0 +1,20 @@
+@import 'colors.css';
+
+
+/* Apply variables to Thunar/GTK3 elements */
+window, 
+.background,
+treeview.view {
+    background-color: @bg_color;
+    color: @fg_color;
+}
+
+/* Sidebar and List View */
+ThunarWindow .sidebar,
+ThunarWindow .view {
+    background-color: @bg_color;
+}
+
+selection {
+    background-color: @selected_bg_color;
+}

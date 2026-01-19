@@ -1,0 +1,77 @@
+@import "colors.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background-color: @background; /* Solid deep teal #0e1416 */
+    color: @on_background;
+    border-bottom: 1px solid @primary_container;
+}
+
+#window {
+    margin: 6px;
+}
+
+/* --- WORKSPACES --- */
+#workspaces button {
+    padding: 0 8px;
+    color: @on_surface_variant; /* Muted for inactive */
+    background: transparent;
+    border-bottom: 2px solid transparent;
+}
+
+#workspaces button.active {
+    color: @primary_fixed; /* Strongest theme color #a0efff */
+    border-bottom: 2px solid @primary_fixed;
+}
+
+#workspaces button.urgent {
+    color: @error;
+    border-bottom: 2px solid @error;
+}
+
+/* --- MODULE SIGNIFIERS --- */
+#clock, #battery, #cpu, #memory, #network, #pulseaudio, #temperature {
+    padding: 0 10px;
+}
+
+#network {
+    color: @tertiary_fixed_dim; /* High-density lavender/blue #3c4665 */
+    border-bottom: 2px solid @tertiary_fixed_dim;
+}
+
+#cpu {
+    color: @on_primary_fixed_variant; /* High-density deep teal #004e59 */
+    border-bottom: 2px solid @on_primary_fixed_variant;
+}
+
+#temperature {
+    color: @error; /* Distinct coral/red */
+    border-bottom: 2px solid @error;
+    padding: 0 12px;
+}
+
+#clock {
+    color: @secondary; /* Bright but distinct teal/cyan #b1cbd1 */
+    border-bottom: 2px solid @secondary;
+}
+
+#memory {
+    color: @primary; /* Mid-tone cyan #82d3e3 */
+    border-bottom: 2px solid @primary;
+}
+
+#battery {
+    color: @tertiary; /* Distinct mid-tone lavender #bcc5eb */
+    border-bottom: 2px solid @tertiary;
+}
+
+#battery.critical:not(.charging) {
+    background-color: @error_container;
+    color: @on_error_container;
+    border-bottom: 2px solid @error;
+}

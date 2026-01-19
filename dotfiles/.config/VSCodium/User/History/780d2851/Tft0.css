@@ -1,0 +1,18 @@
+
+/* Import the colors Matugen generates */
+@import 'colors.css';
+
+/* * Instead of rewriting the theme, we just tell Nordic to use 
+ * our Matugen colors for specific 'accent' variables.
+ */
+/* @define-color accent_color @primary;
+@define-color accent_bg_color @primary_container;
+@define-color selection_bg_color @primary;
+@define-color selection_fg_color @on_primary; */
+
+flowboxchild:selected,
+listboxrow:selected {
+    background-color: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+}

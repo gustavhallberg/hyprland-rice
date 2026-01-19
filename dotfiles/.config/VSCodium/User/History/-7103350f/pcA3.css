@@ -1,0 +1,80 @@
+@import "colors.css";
+
+
+/* Container */
+.control-center {
+    background-color: @bg;
+    border: 1px solid @primary;
+    border-radius: 12px;
+}
+
+/* Scrollbar Suppression */
+scrollbar {
+    background-color: transparent;
+    border: none;
+}
+scrollbar trough, scrollbar slider {
+    background-color: transparent;
+}
+
+/* Button Grid */
+.widget-buttons-grid {
+    background-color: alpha(@primary, 0.1);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.widget-buttons-grid button {
+    background-color: alpha(@bg, 0.5);
+    border-radius: 8px;
+    min-width: 50px;
+    min-height: 50px;
+}
+
+/* Sliders - Logic to prevent GtkGizmo -13 error */
+.widget-volume, .widget-backlight {
+    margin: 10px;
+    padding: 10px;
+    background-color: alpha(@primary, 0.1);
+    border-radius: 12px;
+}
+
+.widget-volume label, .widget-backlight label {
+    font-size: 1.2rem;
+    color: @primary;
+    margin-right: 15px;
+}
+
+scale trough {
+    background-color: alpha(@fg, 0.1);
+    border-radius: 10px;
+    min-height: 10px;
+    min-width: 200px; /* Secure positive math */
+}
+
+scale highlight {
+    background-color: @primary;
+    border-radius: 10px;
+}
+
+scale slider {
+    background-color: @fg;
+    border-radius: 100%;
+    min-height: 16px;
+    min-width: 16px;
+}
+
+/* Notification Area Header */
+.widget-title {
+    margin: 10px;
+}
+
+.widget-title label {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.widget-dnd {
+    margin: 10px;
+}

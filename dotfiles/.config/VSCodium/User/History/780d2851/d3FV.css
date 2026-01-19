@@ -1,0 +1,61 @@
+@import 'colors.css';
+
+
+@import url("colors.css");
+
+/* * Global UI Mapping 
+ */
+* {
+    /* Use the generated window colors as base */
+    background-color: @window_bg_color;
+    color: @window_fg_color;
+    /* Clean Nordic look */
+    box-shadow: none;
+    border-color: @accent_color;
+}
+
+/* * Thunar Specific Elements 
+ */
+
+/* The Main View / File Grid */
+.view, 
+treeview.view, 
+ThunarIconView {
+    background-color: @view_bg_color;
+    color: @view_fg_color;
+}
+
+/* The Sidebar (Shortcut pane) */
+.sidebar,
+ThunarWindow .sidebar,
+treeview.sidebar {
+    background-color: @sidebar_bg_color;
+    color: @sidebar_fg_color;
+    border-right: 1px solid alpha(@accent_color, 0.2);
+}
+
+/* Selection / Active Items */
+selection,
+.view:selected,
+.sidebar:selected,
+treeview.view:selected {
+    background-color: @accent_bg_color;
+    color: @accent_fg_color;
+}
+
+/* Header / Toolbar */
+headerbar,
+.titlebar,
+toolbar {
+    background-color: @headerbar_bg_color;
+    color: @headerbar_fg_color;
+}
+
+/* Context Menus / Popovers */
+popover,
+menu,
+.menu {
+    background-color: @popover_bg_color;
+    color: @popover_fg_color;
+    border: 1px solid @accent_color;
+}

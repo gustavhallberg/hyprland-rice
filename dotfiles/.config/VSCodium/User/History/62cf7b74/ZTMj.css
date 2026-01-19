@@ -1,0 +1,73 @@
+@import "colors.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background: @surface_container;
+    color: @on_surface;
+    /* Add a subtle bottom border using the primary color */
+    border-bottom: 2px solid @primary;
+}
+
+#workspaces button {
+    padding: 0 6px;
+    color: @on_surface_variant;
+    background: transparent;
+    border-bottom: 2px solid transparent;
+}
+
+#workspaces button.active {
+    color: @primary;
+    border-bottom: 2px solid @primary;
+}
+
+#workspaces button.urgent {
+    color: @error;
+    border-bottom: 2px solid @error;
+}
+
+/* Module Grouping - Unified Nordic Look */
+#clock, #battery, #cpu, #memory, #network, #temperature {
+    padding: 0 10px;
+    margin: 4px 0;
+}
+
+/* Assigning specific Matugen tones to modules */
+#clock {
+    color: @primary;
+}
+
+#battery {
+    color: @tertiary;
+}
+
+#memory {
+    color: @secondary;
+}
+
+#cpu {
+    color: @primary_fixed_dim;
+}
+
+#network {
+    color: @tertiary_fixed_dim;
+}
+
+#temperature {
+    color: @on_surface_variant;
+}
+
+/* Critical State */
+#battery.critical:not(.charging) {
+    background-color: @error_container;
+    color: @on_error_container;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}

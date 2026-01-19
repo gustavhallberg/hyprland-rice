@@ -1,0 +1,118 @@
+@import "colors.css";
+
+/* 1. Main Panel - Fixed and Clean */
+.control-center {
+    background: alpha(@bg, 0.95);
+    border-radius: 12px;
+    border: 1px solid @primary;
+    margin: 10px;
+    padding: 20px;
+    min-height: 1050px;
+}
+
+/* 2. Button Grid - Added bottom margin */
+.widget-buttons-grid {
+    background: alpha(@primary, 0.1);
+    margin-bottom: 25px;
+    border-radius: 12px;
+    padding: 5px;
+}
+
+/* 3. MPRIS (Now Playing) - Increased height and spacing */
+.widget-mpris {
+    background: alpha(@primary, 0.1);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 25px;
+    min-height: 120px;
+}
+
+.widget-mpris-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: @primary;
+}
+
+/* 4. Sliders - Centered Icons and Rigid Spacing */
+.widget-volume, .widget-backlight {
+    background: alpha(@primary, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.widget-volume > box > label,
+.widget-backlight > box > label {
+    font-size: 1.3rem;
+    margin-right: 20px;
+    color: @primary;
+}
+
+scale {
+    min-height: 20px;
+}
+
+trough {
+    min-height: 10px;
+    min-width: 230px;
+    background: alpha(@fg, 0.1);
+    border-radius: 10px;
+}
+
+highlight {
+    background: @primary;
+    border-radius: 10px;
+}
+
+slider {
+    background: @fg;
+    min-width: 14px;
+    min-height: 14px;
+    border-radius: 50%;
+}
+
+/* 5. Notification Header Alignment */
+.widget-title {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.widget-title > label {
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.widget-dnd {
+    margin-bottom: 20px;
+}
+
+.widget-dnd > label {
+    font-size: 1.1rem;
+}
+
+/* 6. Notifications List - Kill Scrollbars */
+scrollbar, trough, slider {
+    background: transparent;
+    border: none;
+    min-width: 0;
+    min-height: 0;
+}
+
+/* Fix Screenshot Icon Padding */
+.notification-content {
+    background: alpha(@surface, 0.5);
+    margin: 10px 0px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid alpha(@primary, 0.3);
+}
+
+.notification-content image {
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.notification-row .app-name {
+    opacity: 0;
+    font-size: 0px;
+}

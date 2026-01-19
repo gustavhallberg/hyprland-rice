@@ -1,0 +1,8 @@
+@define-color bg {{colors.surface.default.hex}};
+@define-color fg {{colors.on_surface.default.hex}};
+@define-color primary {{colors.primary.default.hex}};
+@define-color primary_container {{colors.primary_container.default.hex}};
+@define-color on_primary_container {{colors.on_primary_container.default.hex}};
+@define-color selection {{colors.primary_container.default.hex}};
+@define-color selection_text {{colors.on_primary_container.default.hex}};
+@define-color border {{colors.primary.default.hex}};

@@ -1,0 +1,19 @@
+# stylesheet
+style=style.css
+
+# mode & placement
+location=center
+width=400
+lines=5
+dynamic_lines=true
+layer=overlay
+
+# search & UX
+matching=fuzzy
+insensitive=true
+prompt=Select Waybar Style
+
+# keybinds (Keep your vim-ish navigation)
+key_up=Ctrl-k
+key_down=Ctrl-j
+key_submit=Return

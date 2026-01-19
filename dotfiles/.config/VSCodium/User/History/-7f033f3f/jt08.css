@@ -1,0 +1,19 @@
+@import "colors.css";
+@import "notifications.css";
+@import "control_center.css";
+
+/* Reset text and font globally */
+* {
+    color: @fg;
+    font-family: "SF Pro Display", "JetBrainsMono Nerd Font", sans-serif;
+}
+
+/* Kill the system vertical line by targeting the scrollbar nodes specifically */
+window#swaync-control-center scrollbar,
+window#swaync-control-center scrollbar trough,
+window#swaync-control-center scrollbar slider {
+    background: transparent;
+    border: none;
+    min-width: 0;
+    min-height: 0;
+}

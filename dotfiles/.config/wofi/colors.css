@@ -1,8 +1,8 @@
-@define-color bg #111418;
-@define-color fg #e1e2e8;
-@define-color primary #a2c9fd;
-@define-color primary_container #1c4975;
-@define-color on_primary_container #d2e4ff;
-@define-color selection #1c4975;
-@define-color selection_text #d2e4ff;
-@define-color border #a2c9fd;
+@define-color bg #19120d;
+@define-color fg #f0dfd7;
+@define-color primary #ffb688;
+@define-color primary_container #6e380f;
+@define-color on_primary_container #ffdbc7;
+@define-color selection #6e380f;
+@define-color selection_text #ffdbc7;
+@define-color border #ffb688;

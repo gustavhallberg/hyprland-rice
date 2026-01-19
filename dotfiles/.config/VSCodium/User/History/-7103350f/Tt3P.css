@@ -1,0 +1,94 @@
+@import "colors.css";
+
+/* Main Container */
+.control-center {
+    background: alpha(@bg, 0.95) !important;
+    border-radius: 12px !important;
+    border: 1px solid @primary !important;
+    margin: 10px !important;
+    padding: 20px !important;
+    min-height: 1030px !important; /* Adjusted for standard 1080p fit */
+}
+
+/* Button Grid - Top spacing */
+.widget-buttons-grid {
+    background: alpha(@primary, 0.1) !important;
+    margin: 0 0 20px 0 !important;
+    border-radius: 12px !important;
+    padding: 10px !important;
+}
+
+/* Sliders - Aligning icons and tracks */
+.widget-volume, .widget-backlight {
+    background: alpha(@primary, 0.1) !important;
+    border-radius: 12px !important;
+    padding: 15px 20px !important;
+    margin: 10px 0 !important;
+}
+
+.widget-volume > box > label,
+.widget-backlight > box > label {
+    font-size: 1.4rem !important;
+    margin-right: 15px !important;
+    color: @primary !important;
+    min-width: 25px !important;
+}
+
+/* Slider Bar Details */
+scale {
+    min-height: 20px !important;
+}
+
+trough {
+    min-height: 10px !important;
+    min-width: 240px !important;
+    background: alpha(@fg, 0.1) !important;
+    border-radius: 10px !important;
+}
+
+highlight {
+    background: @primary !important;
+    border-radius: 10px !important;
+}
+
+slider {
+    background: @fg !important;
+    min-width: 14px !important;
+    min-height: 14px !important;
+    margin-top: -2px !important;
+    border-radius: 50% !important;
+}
+
+/* Notification Header & DND */
+.widget-title {
+    margin: 25px 0 10px 0 !important;
+}
+
+.widget-title > label {
+    font-size: 1.2rem !important;
+    font-weight: 800 !important;
+    color: @primary !important;
+}
+
+.widget-dnd {
+    margin-bottom: 20px !important;
+}
+
+.widget-dnd > label {
+    font-size: 1.1rem !important;
+}
+
+/* Fix Notification List appearance */
+.notification-content {
+    background: alpha(@surface, 0.5) !important;
+    margin: 10px 0 !important;
+    padding: 15px !important;
+    border-radius: 10px !important;
+    border: 1px solid alpha(@primary, 0.3) !important;
+}
+
+/* Remove 'notify-send' label */
+.notification-row .app-name {
+    opacity: 0 !important;
+    font-size: 0px !important;
+}

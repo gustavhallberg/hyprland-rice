@@ -1,0 +1,35 @@
+# stylesheet
+style=style.css
+
+# mode & placement
+show=drun
+location=center
+width=700
+lines=8
+columns=1
+dynamic_lines=false
+layer=overlay
+no_actions=true
+
+# icons
+allow_images=true
+image_size=36
+
+# search & UX
+matching=fuzzy
+insensitive=true
+hide_scroll=false
+prompt=
+
+# terminal
+term=foot
+
+# keybinds (vim-ish)
+key_up=Ctrl-k
+key_down=Ctrl-j
+key_left=Ctrl-h
+key_right=Ctrl-l
+key_submit=Return
+key_forward=Tab
+key_backward=Shift-ISO_Left_Tab
+

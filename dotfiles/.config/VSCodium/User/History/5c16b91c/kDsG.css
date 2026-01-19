@@ -1,0 +1,36 @@
+@import "colors.css";
+
+#window {
+    background-color: @wofi-bg;
+    color: @wofi-fg;
+    border: 2px solid @wofi-accent;
+    border-radius: 12px;
+    font-family: "JetBrainsMono Nerd Font";
+}
+
+#outer-box {
+    margin: 10px;
+}
+
+#inner-box {
+    margin: 5px;
+    background-color: @wofi-bg;
+}
+
+#entry:selected {
+    background-color: @wofi-selection;
+}
+
+#text {
+    color: @wofi-fg;
+}
+
+#text:selected {
+    color: @wofi-selection-text;
+}
+
+#img {
+    margin-right: 15px;
+    border-radius: 6px;
+    border: 1px solid @wofi-accent;
+}

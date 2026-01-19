@@ -1,0 +1,12 @@
+@import "colors.css";
+@import "notifications.css";
+@import "control_center.css";
+
+/* Global reset for all SwayNC elements */
+* {
+    color: @fg;
+    all: unset;
+    font-family: "SF Pro Display", "JetBrainsMono Nerd Font", sans-serif;
+    font-weight: 600;
+    transition: 200ms;
+}

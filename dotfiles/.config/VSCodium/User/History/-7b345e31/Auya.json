@@ -1,0 +1,61 @@
+{
+  "positionX": "right",
+  "positionY": "top",
+  "cssPriority": "user",
+  "control-center-width": 380,
+  "control-center-height": 1050,
+  "control-center-margin-top": 10,
+  "control-center-margin-bottom": 10,
+  "control-center-margin-right": 10,
+  "control-center-margin-left": 10,
+  "fit-to-screen": false,
+  "max-notifications-per-widget": 0,
+  "widgets": [
+    "label",
+    "buttons-grid",
+    "mpris",
+    "volume",
+    "backlight",
+    "title",
+    "dnd",
+    "notifications"
+  ],
+  "widget-config": {
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": "󰎟"
+    },
+    "dnd": {
+      "text": "Do Not Disturb"
+    },
+    "label": {
+      "max-lines": 1,
+      "text": "Control Center"
+    },
+    "mpris": {
+      "image-size": 80,
+      "image-radius": 10,
+      "max-visible": 1
+    },
+    "volume": {
+      "label": "󰕾 "
+    },
+    "backlight": {
+      "label": "󰃟 "
+    },
+    "notifications": {
+      "max-lines": 5
+    },
+    "buttons-grid": {
+      "actions": [
+        { "label": "󰖩", "command": "nm-connection-editor" },
+        { "label": "󰂯", "command": "blueman-manager" },
+        { "label": "󰏘", "command": "nwg-look" },
+        { "label": "󰐥", "command": "wlogout -b 2" },
+        { "label": "󰃟", "command": "hyprpicker -a" },
+        { "label": "󱊖", "command": "swaync-client -cp" }
+      ]
+    }
+  }
+}

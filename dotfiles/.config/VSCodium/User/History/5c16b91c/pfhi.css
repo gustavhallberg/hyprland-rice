@@ -1,0 +1,44 @@
+@import "colors.css";
+
+#window {
+    background-color: @bg !important;
+    color: @fg;
+    border: 1px solid @primary;
+    border-radius: 12px;
+}
+
+/* Force the grid container to maintain layout */
+#inner-box {
+    display: block; /* Prevents flex-reverts */
+}
+
+#entry {
+    /* Locked vertical orientation for the grid */
+    orientation: vertical;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+}
+
+/* Ensure selection doesn't change layout properties */
+#entry:selected {
+    background-color: @primary_container !important;
+    orientation: vertical; 
+}
+
+#img {
+    margin: auto;
+    border-radius: 6px;
+    /* Explicitly define display to prevent shifting on focus */
+    display: block;
+}
+
+/* Aggressive hide for text labels */
+#text, #entry label, #entry #text {
+    display: none !important;
+    visibility: hidden !important;
+    font-size: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+}

@@ -1,0 +1,7 @@
+@import "colors.css";
+@import "notifications.css";
+@import "control_center.css";
+
+* {
+    font-family: "SF Pro Display", sans-serif;
+}

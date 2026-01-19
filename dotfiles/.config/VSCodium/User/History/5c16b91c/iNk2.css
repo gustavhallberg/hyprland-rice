@@ -1,0 +1,41 @@
+@import "colors.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+}
+
+window {
+    background-color: @bg !important;
+    color: @fg;
+    border: 1px solid @primary;
+    border-radius: 12px;
+}
+
+#outer-box {
+    margin: 10px;
+}
+
+#entry {
+    orientation: vertical;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 8px;
+}
+
+#entry:selected {
+    background-color: @primary_container !important;
+}
+
+#img {
+    margin: auto; /* Centers image in the column */
+    border-radius: 6px;
+}
+
+/* Force-hide text labels */
+#text, #entry label, #entry #text {
+    display: none !important;
+    opacity: 0 !important;
+    font-size: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}

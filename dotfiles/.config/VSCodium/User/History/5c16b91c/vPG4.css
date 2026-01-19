@@ -1,0 +1,54 @@
+@import "colors.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+}
+
+#window {
+    background-color: @bg !important;
+    color: @fg;
+    border: 1px solid @primary;
+    border-radius: 12px;
+    /* Ensures thumbnails don't bleed past rounded corners */
+    overflow: hidden;
+}
+
+#outer-box {
+    margin: 10px;
+    background-color: transparent !important;
+}
+
+#inner-box {
+    margin: 10px;
+    background-color: transparent !important;
+}
+
+#scroll {
+    background-color: transparent !important;
+}
+
+#entry {
+    padding: 12px;
+    margin: 4px 10px;
+    border-radius: 8px;
+    transition: background-color 0.1s ease;
+}
+
+#entry:selected {
+    background-color: @primary_container !important;
+}
+
+#img {
+    margin-right: 15px;
+    border-radius: 6px;
+}
+
+#text {
+    font-size: 13px;
+    color: @fg;
+}
+
+#text:selected {
+    color: @on_primary_container !important;
+    font-weight: bold;
+}

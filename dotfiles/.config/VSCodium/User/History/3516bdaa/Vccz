@@ -1,0 +1,21 @@
+# stylesheet
+style=style.css
+
+# mode & placement
+show=dmenu
+location=center
+width=920
+height=710
+layer=overlay
+
+# Layout logic for Grid
+columns=3
+image_size=280x157
+allow_images=true
+hide_scroll=true
+sort_order=default
+
+# UX
+insensitive=true
+prompt=Select Wallpaper
+cache_file=/dev/null

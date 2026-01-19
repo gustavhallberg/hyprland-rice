@@ -1,0 +1,26 @@
+.notification-row {
+    outline: none;
+    margin: 10px;
+    padding: 0;
+}
+
+.notification-content {
+    background: alpha(@bg, 0.9);
+    color: @fg;
+    padding: 15px;
+    border-radius: 8px; /* Clean Nordic corner */
+    border: 1px solid @primary;
+}
+
+.notification-default:hover {
+    background: @surface;
+}
+
+.summary {
+    font-weight: bold;
+    color: @primary;
+}
+
+.body {
+    color: @fg;
+}

@@ -1,0 +1,13 @@
+/*
+* Css Colors
+* Generated with Matugen
+*/
+<* for name, value in colors *>
+/* We use .rgba and set an alpha of 0.7 (70% opacity).
+   We also boost lightness to ensure it's not 'too dark'.
+*/
+@define-color {{name}} {{value.default.rgba | set_lightness(65) | set_alpha(0.7)}};
+
+/* Creating a 'solid' version for borders or text that shouldn't be transparent */
+@define-color {{name}}_solid {{value.default.hex | set_lightness(80)}};
+<* endfor *>

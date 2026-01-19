@@ -1,0 +1,8 @@
+name: Local Config
+version: 1.0.0
+schema: v1
+models:
+
+  - uses: google/gemini-2.5-flash
+    with:
+      GEMINI_API_KEY: AIzaSyANBQOQFEtPO38eFcMGdXEEh6AVu5KXUZ8

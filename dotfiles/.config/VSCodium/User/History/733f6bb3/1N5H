@@ -1,0 +1,22 @@
+I did already write a nice message but fiddled with swaync control center, and some new looks to hyprlock. 
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is ahead of 'origin/main' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#	modified:   dotfiles/.config/foot/colors.ini
+#	modified:   dotfiles/.config/hypr/colors.conf
+#	modified:   dotfiles/.config/hypr/hyprlock.conf
+#	modified:   dotfiles/.config/hypr/windowrules.conf
+#	modified:   dotfiles/.config/swaync/colors.css
+#	modified:   dotfiles/.config/swaync/config.json
+#	new file:   dotfiles/.config/swaync/control_center.css
+#	new file:   dotfiles/.config/swaync/notifications.css
+#	modified:   dotfiles/.config/swaync/style.css
+#	modified:   dotfiles/.config/waybar/colors.css
+#	modified:   dotfiles/.config/wofi/colors.css
+#	modified:   scripts/screenshot.sh
+#

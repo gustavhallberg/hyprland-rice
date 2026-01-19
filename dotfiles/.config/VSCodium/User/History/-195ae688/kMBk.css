@@ -1,0 +1,46 @@
+/* notification-row is the invisible wrapper for the animation */
+.notification-row {
+    outline: none;
+    margin: 10px;
+    padding: 0;
+}
+
+/* The actual bubble */
+.notification-content {
+    background: alpha(@bg, 0.5); /* Semi-transparent to blend with CC or Wallpaper */
+    color: @fg;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid alpha(@primary, 0.5);
+    font-family: "SF Pro Text", "SF Pro Display", sans-serif;
+}
+
+.summary {
+    font-family: "SF Pro Display", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: @primary;
+}
+
+.body {
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 14px;
+    color: @fg;
+    margin-top: 5px;
+}
+
+/* Hover effect for interactive notifications */
+.notification-default:hover {
+    background: alpha(@primary, 0.1);
+}
+
+/* Close button styling */
+.close-button {
+    background: @error;
+    color: @bg;
+    text-shadow: none;
+    padding: 2px;
+    border-radius: 100%;
+    margin-top: 5px;
+    margin-right: 5px;
+}

@@ -1,0 +1,25 @@
+name: Local Config
+version: 1.0.0
+schema: v1
+
+tabAutocompleteOptions:
+  disable: true
+  
+models:
+  - uses: google/gemini-2.0-flash
+    with:
+      GEMINI_API_KEY: AIzaSyANBQOQFEtPO38eFcMGdXEEh6AVu5KXUZ8
+
+
+models:
+  - title: Gemini 1.5 Flash
+    provider: gemini
+    model: gemini-1.5-flash-latest  # Use 1.5, not 2.0
+    apiKey: AIzaSyANBQOQFEtPO38eFcMGdXEEh6AVu5KXUZ8
+    
+# If you have an autocomplete section, make sure it matches:
+tabAutocompleteModel:
+  title: Gemini 1.5 Flash
+  provider: gemini
+  model: gemini-1.5-flash-latest
+  apiKey: AIzaSyANBQOQFEtPO38eFcMGdXEEh6AVu5KXUZ8

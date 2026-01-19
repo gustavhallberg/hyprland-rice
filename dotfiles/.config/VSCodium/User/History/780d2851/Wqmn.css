@@ -1,0 +1,103 @@
+@import 'colors.css';
+
+/* * Global UI Mapping & Reset
+ * Strips default GTK frames and shadows for a flat look 
+ */
+* {
+    background-color: @window_bg_color;
+    color: @window_fg_color;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    -gtk-icon-shadow: none;
+}
+
+/* * Main Window & Layout 
+ */
+window.main-window {
+    background-color: @window_bg_color;
+}
+
+/* * Headerbar & Toolbars
+ * Flat design with a subtle accent border at the bottom 
+ */
+headerbar,
+.titlebar,
+toolbar {
+    background-color: @headerbar_bg_color;
+    color: @headerbar_fg_color;
+    padding: 4px 8px;
+    border-bottom: 1px solid alpha(@accent_color, 0.1);
+}
+
+/* Address Bar / Search Entries */
+entry {
+    background-color: alpha(@accent_color, 0.05);
+    color: @window_fg_color;
+    border-radius: 6px;
+    padding: 4px 10px;
+    margin: 4px;
+}
+
+/* * Thunar Specific Elements 
+ */
+
+/* The Main View / File Grid */
+.view, 
+treeview.view, 
+ThunarIconView {
+    background-color: @view_bg_color;
+    color: @view_fg_color;
+    padding: 15px; /* Adds whitespace to the grid */
+}
+
+/* Scrolled Window Background */
+scrolledwindow {
+    background-color: @view_bg_color;
+}
+
+/* The Sidebar (Shortcut pane) */
+.sidebar,
+ThunarWindow .sidebar,
+treeview.sidebar {
+    background-color: @sidebar_bg_color;
+    color: @sidebar_fg_color;
+    border-right: 1px solid alpha(@accent_color, 0.1);
+}
+
+/* Hide separators/dividers */
+separator {
+    background-color: transparent;
+    min-height: 0;
+    min-width: 0;
+}
+
+/* * Selection & Interactive States
+ */
+selection,
+.view:selected,
+.sidebar:selected,
+treeview.view:selected {
+    background-color: @accent_bg_color;
+    color: @accent_fg_color;
+    border-radius: 4px;
+}
+
+/* * Context Menus & Popovers
+ */
+popover,
+menu,
+.menu {
+    background-color: @popover_bg_color;
+    color: @popover_fg_color;
+    border: 1px solid @accent_color;
+    padding: 5px;
+}
+
+/* * Statusbar (Bottom bar)
+ */
+statusbar {
+    font-size: 0.85rem;
+    padding: 2px 10px;
+    background-color: @window_bg_color;
+}
