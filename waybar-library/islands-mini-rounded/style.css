@@ -3,7 +3,7 @@
 * {
   font-family: SF Pro Display, SF Pro Text, JetBrainsMono Nerd Font, FontAwesome, sans-serif;
   font-size: 13px;
-  border-radius: 5px;
+  border-radius: 15px;
   font-weight: 600;
 }
 
@@ -15,7 +15,7 @@ window#waybar {
 #workspaces {
   background-color: @surface;
   margin: 0 0 0 0;
-  padding: 5 4 5 4;
+  padding: 6 6 6 6;
   
   
   
@@ -23,7 +23,7 @@ window#waybar {
 
 #workspaces button {
   padding: 0 2 0 2;
-  margin: 0 2 0 2;
+  margin: 0 3 0 3;
   background-color: @secondary_container;
   
 
@@ -43,6 +43,8 @@ window#waybar {
   background-color: @main-accent;
   padding-left: 8px;
   padding-right: 8px;
+  border-radius: 8px;
+  
   
 }
 
@@ -61,8 +63,19 @@ window#waybar {
 #custom-menu {
   color: @on_surface;
   background-color: @surface;
-  padding: 0 12 0 9.5;
+  padding: 0 12 0 10.5;
   margin: 0 5 0 5;
+  
+  
+}
+
+#custom-bluetui {
+  color: @on_surface;
+  background-color: @surface;
+  padding: 0 11 0 10;
+  margin: 0 2 0 2;
+  font-size: 16px;
+  border-radius: 50%;
   
   
 }
@@ -70,7 +83,7 @@ window#waybar {
 #clock {
   color: @on_surface;
   background-color: @surface;
-  padding: 0 5 0 5;
+  padding: 5 10 5 10;
   margin: 0 5 0 2;
 }
 
@@ -83,7 +96,7 @@ window#waybar {
 #window {
     color: @on_surface;
     background-color: @surface;
-    padding: 0 5 0 5;
+    padding: 0 10 0 10;
     margin: 0 2 0 2;
 
 }
