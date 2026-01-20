@@ -6,3 +6,5 @@ set -gx QT_QPA_PLATFORM wayland
 #function fish_greeting
 #    # smth smth
 #end
+
+fish_add_path /home/gustav/.spicetify
